@@ -1,0 +1,3 @@
+[submodule "DashApp/cheatset"]
+	path = DashApp/cheatset
+	url = https://github.com/Kapeli/cheatset.git
