@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>macOS Tips</title>
+<link href='style.css' rel='stylesheet'>
+<link href='//dash_ref/Category/Appearance/1'>
+<link href='//dash_ref_Appearance/Entry/Enable Subpixel Smoothing for Electron Apps/0'>
+<link href='//dash_ref_Appearance/Entry/Add Empty Space%2FSeparator to Dock/0'>
+<link href='//dash_ref/Category/Behavior/1'>
+<link href='//dash_ref_Behavior/Entry/Disable iTunes Launch when Play-Button is Pressed/0'>
+<link href='//dash_ref_Behavior/Entry/Disable TCP Keepalive/0'>
+<link href='//dash_ref/Category/Useful Commands/1'>
+<link href='//dash_ref_Useful Commands/Entry/Flush DNS Cache/0'>
+<link href='//dash_ref_Useful Commands/Entry/Create .dmg from Folder Contents/0'>
+<link href='//dash_ref/Category/Applications/1'>
+<link href='//dash_ref_Applications/Entry/Fix Homebrew Depends-On Error/0'>
+</head>
+<body>
+<header>
+<h1>macOS Tips</h1>
+</header>
+<article>
+<p><p>Assorted bits to improve life on macOS</p>
+</p>
+<section class='category'>
+<h2 id='//dash_ref/Category/Appearance/1'>
+Appearance
+</h2>
+<div class='scrollable'>
+<table>
+<tr id='//dash_ref_Appearance/Entry/Enable Subpixel Smoothing for Electron Apps/0'>
+<td class='description' colspan='2'>
+<div class='name'><p>Enable Subpixel Smoothing for Electron Apps</p>
+</div>
+<div class='notes'><p><code>defaults write com.microsoft.VSCode CGFontRenderingFontSmoothingDisabled 0</code>
+<code>defaults write com.microsoft.VSCode.helper CGFontRenderingFontSmoothingDisabled 0</code> 
+<code>defaults write com.microsoft.VSCode.helper.EH CGFontRenderingFontSmoothingDisabled 0</code> 
+<code>defaults write com.microsoft.VSCode.helper.NP CGFontRenderingFontSmoothingDisabled 0</code>
+<code>defaults write com.spotify.client CGFontRenderingFontSmoothingDisabled 0</code>
+<code>defaults write com.spotify.client.helper CGFontRenderingFontSmoothingDisabled 0</code></p>
+</div>
+</td>
+</tr>
+<tr id='//dash_ref_Appearance/Entry/Add Empty Space%2FSeparator to Dock/0'>
+<td class='description' colspan='2'>
+<div class='name'><p>Add Empty Space/Separator to Dock</p>
+</div>
+<div class='notes'><p><code>defaults write com.apple.dock persistent-apps -array-add &#39;{&quot;tile-type&quot;=&quot;spacer-tile&quot;;}&#39;; killall Dock</code></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</section>
+<section class='category'>
+<h2 id='//dash_ref/Category/Behavior/1'>
+Behavior
+</h2>
+<div class='scrollable'>
+<table>
+<tr id='//dash_ref_Behavior/Entry/Disable iTunes Launch when Play-Button is Pressed/0'>
+<td class='description' colspan='2'>
+<div class='name'><p>Disable iTunes Launch when Play-Button is Pressed</p>
+</div>
+<div class='notes'><p><code>&#39;launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist&#39;</code></p>
+</div>
+</td>
+</tr>
+<tr id='//dash_ref_Behavior/Entry/Disable TCP Keepalive/0'>
+<td class='description' colspan='2'>
+<div class='name'><p>Disable TCP Keepalive</p>
+</div>
+<div class='notes'><p><code>sudo pmset -b tcpkeepalive 0</code></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</section>
+<section class='category'>
+<h2 id='//dash_ref/Category/Useful Commands/1'>
+Useful Commands
+</h2>
+<div class='scrollable'>
+<table>
+<tr id='//dash_ref_Useful Commands/Entry/Flush DNS Cache/0'>
+<td class='description' colspan='2'>
+<div class='name'><p>Flush DNS Cache</p>
+</div>
+<div class='notes'><p><code>sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder</code></p>
+</div>
+</td>
+</tr>
+<tr id='//dash_ref_Useful Commands/Entry/Create .dmg from Folder Contents/0'>
+<td class='description' colspan='2'>
+<div class='name'><p>Create .dmg from Folder Contents</p>
+</div>
+<div class='notes'><p><code>hdiutil create -volname &quot;VolumeName&quot; -srcfolder /path/to/folder -ov diskImage.dmg</code></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</section>
+<section class='category'>
+<h2 id='//dash_ref/Category/Applications/1'>
+Applications
+</h2>
+<div class='scrollable'>
+<table>
+<tr id='//dash_ref_Applications/Entry/Fix Homebrew Depends-On Error/0'>
+<td class='description' colspan='2'>
+<div class='name'><p>Fix Homebrew Depends-On Error</p>
+</div>
+<div class='notes'><p><code>/usr/bin/find &quot;$(brew --prefix)/Caskroom/&quot;*&#39;/.metadata&#39; -type f -name &#39;*.rb&#39; -print0 | /usr/bin/xargs -0 /usr/bin/perl -i -pe &#39;s/depends_on macos: \[.*?\]//gsm;s/depends_on macos: .*//g&#39;</code></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</section>
+<section class='notes'>
+<h2>Notes</h2>
+<p>Goodbyte</p>
+
+</section>
+</article>
+<footer>
+Generated with <a onclick="window.dash.openExternal_(this.href); return false;" href='https://github.com/Kapeli/cheatset#readme'>cheatset</a>
+</footer>
+</body>
+</html>
