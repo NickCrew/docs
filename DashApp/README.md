@@ -8,3 +8,5 @@ __NOTE:__ Requires *cheatset* to generate cheatsheets
 https://github.com/Kapeli/cheatset
 
 ***
+
+build.zsh can optionally take the first argument as the desired name for the build output directory. Otherwise, docsets are moved to a folder named 'output'
