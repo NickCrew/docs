@@ -9,4 +9,4 @@ https://github.com/Kapeli/cheatset
 
 ***
 
-build.zsh can optionally take the first argument as the desired name for the build output directory. Otherwise, docsets are moved to a folder named 'output'
+build.zsh can optionally take the first argument as the desired name for the build output. Otherwise, output.zip will be produced

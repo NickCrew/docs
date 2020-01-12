@@ -17,3 +17,7 @@ do
 	cheatset generate $file
 	mv ./*.docset $BLDOUT/.
 done
+
+zip $BLDOUT.zip $BLDOUT/*
+
+rm -rf $BLDOUT
